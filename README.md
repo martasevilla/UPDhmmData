@@ -27,7 +27,7 @@ Uniparental disomy (UPD) is a chromosomal anomaly where both homologs are inheri
 | Script | Description |
 |--------|-------------|
 | `01a-createDataExome.sh` | Prepares GIAB exome trio VCFs (region and SV filtering). |
-| `01ab-createDataGenome.sh` | Prepares high-coverage genome VCFs from 1000 Genomes Project. |
+| `01b-createDataGenome.sh` | Prepares high-coverage genome VCFs from 1000 Genomes Project. |
 | `02-createRegions.sh` | Selects random genomic regions of specific sizes (1–20 Mb). |
 | `03-createSimulations.sh` | Simulates 100 UPD events (5 per type/size) using real VCFs. |
 | `04-runUPDio.sh` | Runs UPDio on simulated multi-sample VCFs. |
