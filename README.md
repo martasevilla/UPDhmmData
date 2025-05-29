@@ -56,39 +56,39 @@ Uniparental disomy (UPD) is a chromosomal anomaly where both homologs are inheri
 
 ```bash
 # For exome data (GIAB)
-bash 01a-createDataExome.sh
+01a-createDataExome.sh
 
 # For genome data (1000 Genomes Project)
-bash 01ab-createDataGenome.sh
+01ab-createDataGenome.sh
 ```
 
 ### Step 2: Region Selection
 
 ```bash
-bash 02-createRegions.sh
+02-createRegions.sh
 ```
 
 ### Step 3: UPD Simulation
 
 ```bash
-sbatch --array=1-100 03-createSimulations.sh
+03-createSimulations.sh (sbatch --array=1-100)
 ```
 
 ### Step 4: Detection Methods
 
 ```bash
-bash 04-runUPDio.sh
-bash 05-runUPDhmm.sh
-sbatch 06-runAltAFplotter.sh
+04-runUPDio.sh
+05-runUPDhmm.sh
+06-runAltAFplotter.sh
 ```
 
 ### Step 5: False Positive Estimation
 
 ```bash
-bash 07-calculateFalsePositives.sh data/01_centro_seg_dup_SV/
+07-calculateFalsePositives.sh <data/01_centro_seg_dup_SV/>
 ```
 ```bash
-bash 08-processSFARI.sh
+08-processSFARI.sh
 ```
 
 
