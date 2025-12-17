@@ -67,4 +67,12 @@ bcftools view -T ^"SV/trios_SV/SSC03417_trio.tsv" -Oz \
 # This step will apply the `calculateEventsSfari.R` script to all VCFs
 # in the specified chromosome directory (example: chr15).
 # -----------------------------
-Rscript calculateEventsSfari.R 15
+Rscript calculateEventsSfari.R \
+  15 \
+  02_vcf_files_trios/chr15 \
+  03_events_UPDhmm \
+  SSC03417 \
+  <father_ID> \
+  <mother_ID> \
+  centro_seg.tsv
+
