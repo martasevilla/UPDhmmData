@@ -47,7 +47,7 @@ bcftools view \
   01_filter/filter_remove_chr15_batch6.bcf \
   -i 'COUNT(FORMAT/GT="0/0") != 3' \
   -m2 -M2 -e 'GT="./."' \
-  -Oz -o 02_vcf_files_trios/chr15/chr15_filter_111_SSC03417_remove_SV.vcf.gz
+  -Oz -o 02_vcf_files_trios/chr15/chr15_filter_111_SSC03417.vcf.gz
 
 # -----------------------------
 # Step 4: Generate SV region files per individual and combine into trio-level TSVs
@@ -58,6 +58,9 @@ bcftools view \
 #   SV/trios_SV/<proband_ID>_trio.tsv
 # -----------------------------
 
+bcftools view -T ^"SV/trios_SV/SSC03417_trio.tsv" -Oz \
+    -o "chr15_filter_111_SSC03417_remove_SV.vcf.gz" \
+    "02_vcf_files_trios/chr15/chr15_filter_111_SSC03417.vcf.gz"
 
 # -----------------------------
 # Step 5: Calculate UPD events using UPDhmm with VAF-based corrections
